@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MurrderMystery</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="css/stylesheet.css">
+</head>
+
+<body>
+    <div id="centerBox">
+        <h1>Murder Mystery</h1>
+        <div class="boxbackground" style="float: left; padding-top: 0.5%;">
+            <form>
+                <fieldset class="scheduler-border border border-4" style="padding: 1% 3%;">
+                    <legend>
+                        <h5>Create or update a suspect:</h5>
+                    </legend>
+                    <label for="optionSelect">Option: </label>
+                    <select name="option" id="optionSelect">
+                        <option>create</option>
+                        <option>update</option>
+                    </select>
+                    <br>
+                    <div id="ifUpdate" style="display: show;">
+                        <lable id="idInput">ID: </lable>
+                    <input type="text" name="inputID" id="idInput" size="5%">
+                    </div>
+                    <lable id="nameInput">Name: </lable>
+                    <input type="text" name="inputName" id="nameInput">
+                    <br>
+                    <label for="weponSelect">Wepon: </label>
+                    <select name="slect" id="weponSelect">
+                        <option>Sword</option>
+                        <option>Rope</option>
+                        <option>Gun</option>
+                        <option>Hammer</option>
+                    </select>
+                    <br>
+                    <label for="locationSelect">Location: </label>
+                    <select name="slectLoc" id="locationSelect">
+                        <option>Garden</option>
+                        <option>Living Room</option>
+                        <option>Bedroom</option>
+                        <option>Car</option>
+                    </select>
+                    <br>
+                    <lable id="jobInput">Profession: </lable>
+                    <input type="text" name="inputJob" id="jobInput">
+                    <br>
+                    <br>
+                    <div class="name" style="text-align: center;">
+                        <button type="submit" id="formsub">Submit</button>
+                    </div>
+                </fieldset>
+            </form>
+            <form>
+                <fieldset>
+                    <legend>
+                        <h5>Filter Suspects:</h5>
+                    </legend>
+                    <div class="name" style="text-align: center;">
+                    <button type="submit" id="getsub">All Suspects</button>
+                    </div>
+                    <br>
+                    <lable id="nameget" >Name: </lable>
+                    <input type="text" name="getName" id="nameget" size="5%">
+                    <button type="submit" id="getnamesub">Get suspect by name</button>
+                    <br>
+                    <br>
+                    <lable id="idGet">ID: </lable>
+                    <input type="text" name="getID" id="idGet" size="3%">
+                    <button type="submit" id="getidsub">Get suspect by ID</button>
+                </fieldset>
+            </form>
+            <br>
+        </div>
+        <div class="boxbackground2" style="float: right;">
+            
+
+            <br>
+        </div>
+
+
+    </div>
+</body>
+
+</html>
