@@ -42,7 +42,7 @@ public class SuspectServiceList implements SuspectService {
 	public String deleteSuspect(int id) {
 		// TODO Auto-generated method stub
 		suspects.remove(id);
-		return "Deleted Suspect at index"+id;
+		return "Deleted Suspect at index "+id;
 	}
 
 	@Override

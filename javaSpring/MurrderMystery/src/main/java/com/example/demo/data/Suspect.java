@@ -25,6 +25,7 @@ public class Suspect {
 		super();
 		this.id =id;
 		this.name=name;
+		this.wepon=wepon;
 		this.location=location;
 		this.job=job;
 		this.percentageSus=percentageSus;
