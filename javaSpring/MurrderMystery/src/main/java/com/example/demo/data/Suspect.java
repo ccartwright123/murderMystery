@@ -2,8 +2,16 @@ package com.example.demo.data;
 
 import java.util.Objects;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class Suspect {
 	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	private String name;
 	private String wepon;
@@ -110,5 +118,11 @@ public class Suspect {
 	public void setPercentageSus(String percentageSus) {
 		this.percentageSus = percentageSus;
 	}
-
+	
+	@Override
+	public String toString() {
+		return "Suspect [id=" + id + ", name=" + name + ", wepon=" + wepon + ", location=" + location + ", job=" + job
+				+ ", percentageSus=" + percentageSus + "]";
+	}
+	
 }
