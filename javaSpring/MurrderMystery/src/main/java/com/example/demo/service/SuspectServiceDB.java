@@ -59,9 +59,9 @@ public class SuspectServiceDB implements SuspectService{
 		repo.deleteById(id);
 		
 		if(repo.existsById(id)) {
-			return "Not deleted:"+id;
+			return "Not deleted: "+id;
 		}else {
-			return "Deleted:"+id;
+			return "Deleted: "+id;
 		}
 	}
 
