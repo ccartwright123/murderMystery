@@ -69,24 +69,28 @@
                         <h5>Filter Suspects List:</h5>
                     </legend>
                     <div class="name" style="text-align: center;">
-                    <button type="submit" id="getsub">All Suspects</button>
+                    <button type="button" id="getsub">All Suspects</button>
                     </div>
                     <br>
-                    <lable id="nameget" >Name: </lable>
+                    <lable for="nameget" >Name: </lable>
                     <input type="text" name="getName" id="nameget" size="5%">
-                    <button type="submit" id="getnamesub">Get suspect by name</button>
+                    <button type="button" id="getnamesub">Get suspect by name</button>
                     <br>
                     <br>
-                    <lable id="idGet">ID: </lable>
+                    <lable for="idGet">ID: </lable>
                     <input type="text" name="getID" id="idGet" size="3%">
-                    <button type="submit" id="getidsub">Get suspect by ID</button>
+                    <button type="button" id="getidsub">Get suspect by ID</button>
                 </fieldset>
             </form>
             <br>
         </div>
         <div class="boxbackground2" style="float: right;">
             <h4>ID return</h4>
-            <div id="getByIdOutput">
+            <div id="getByIdOutput" class="card-group row row-cols-2">
+
+            </div>
+            <h4>Get by name return</h4>
+            <div id="getByNameOutput" class="card-group row row-cols-2">
 
             </div>
             <H4>Outputs all</H4>

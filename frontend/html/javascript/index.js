@@ -5,6 +5,9 @@ console.log("hello");
 const baseURL ="http://localhost:8080";
 const selector = document.querySelector(`[id="optionSelect"]`);
 
+const getId = document.querySelector("#idGet");
+const getName = document.querySelector("#nameget");
+
 selector.addEventListener(`change`, (e) => {
     console.log (`e.target`, e.target);
     const select = e.target;
@@ -39,7 +42,7 @@ selector.addEventListener(`change`, (e) => {
             .then((res) => {
                 console.log(res);
                 
-        
+                getAllSuspects();
                 form.reset(); //resets form
                 form.inputName.focus(); // selects the name input
             }).catch(err => console.log(err));
@@ -50,6 +53,8 @@ selector.addEventListener(`change`, (e) => {
     }
 });
 const getAllOutput = document.querySelector("#getAllOutput");
+const getByIdOutput = document.querySelector("#getByIdOutput");
+const getByNameOutput = document.querySelector("#getByNameOutput");
 
 const renderSuspect = (suspect, outputDiv) => {   
     const suspectColumn = document.createElement('div');
@@ -92,7 +97,7 @@ const renderSuspect = (suspect, outputDiv) => {
     const deleteButton = document.createElement('button');
     deleteButton.innerText = "DELETE";
     deleteButton.classList.add("btn", "btn-primary");
-    deleteButton.addEventListener('click', () => deleteKitten(suspect.id));
+    deleteButton.addEventListener('click', () => deleteSuspect(suspect.id));
 
     newSuspect.appendChild(deleteButton);
 
@@ -100,6 +105,46 @@ const renderSuspect = (suspect, outputDiv) => {
 
     outputDiv.appendChild(suspectColumn);
 }
+
+const getAllSuspects = () => {
+    axios.get(`${baseURL}/getAllSuspects`)
+    .then(res => {
+        const suspects = res.data;
+
+        getAllOutput.innerHTML = ""; // blanks an element
+
+        suspects.forEach(suspect => renderSuspect(suspect, getAllOutput));
+    }).catch(err => console.log(err));
+}
+
+
+const getSuspectById = () => {
+    console.log("ahhhh");
+    console.log(getId.value);
+    axios.get(`${baseURL}/getSuspect/${getId.value}`)
+    .then(res => {
+        const suspect = res.data;
+        getByIdOutput.innerHTML = "";
+        console.log(res.data);
+        renderSuspect(suspect, getByIdOutput);
+    }).catch(err => console.log(err));
+}
+const getByName = () => {
+    axios.get(`${baseURL}/getByName/${getName.value}`)
+    .then(res => {
+        console.log(getName.value);
+        const suspects = res.data;
+
+        getByNameOutput.innerHTML = ""; // blanks an element
+       
+        console.log("me two");
+        suspects.forEach(suspect => renderSuspect(suspect, getByNameOutput));
+    }).catch(err => console.log(err));
+}
+
+document.querySelector("button#getidsub").addEventListener('click', getSuspectById);
+document.querySelector("button#getnamesub").addEventListener('click', getByName);
+document.querySelector("button#getsub").addEventListener('click', getAllSuspects);
 
 
 }
