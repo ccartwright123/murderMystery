@@ -117,6 +117,13 @@ const getAllSuspects = () => {
     }).catch(err => console.log(err));
 }
 
+const deleteSuspect = id => {
+    axios.delete(`${baseURL}/deleteSuspect/${id}`)
+        .then(res => {
+            console.log(res);
+            getAllSuspects();
+        }).catch(err => console.log(err));
+}
 
 const getSuspectById = () => {
     console.log("ahhhh");
