@@ -6,6 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MurrderMystery</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
+        integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
     <link rel="stylesheet" href="css/stylesheet.css">
 </head>
@@ -36,18 +39,18 @@
                     <br>
                     <label for="weponSelect">Wepon: </label>
                     <select name="slect" id="weponSelect">
-                        <option>Sword</option>
-                        <option>Rope</option>
-                        <option>Gun</option>
-                        <option>Hammer</option>
+                        <option value="sword">Sword</option>
+                        <option value="rope">Rope</option>
+                        <option value="gun">Gun</option>
+                        <option value="hammer">Hammer</option>
                     </select>
                     <br>
                     <label for="locationSelect">Location: </label>
                     <select name="slectLoc" id="locationSelect">
-                        <option>Garden</option>
-                        <option>Living Room</option>
-                        <option>Bedroom</option>
-                        <option>Car</option>
+                        <option value="garden">Garden</option>
+                        <option value="living room">Living Room</option>
+                        <option value="bedroom">Bedroom</option>
+                        <option value="car">Car</option>
                     </select>
                     <br>
                     <lable id="jobInput">Profession: </lable>
@@ -87,7 +90,7 @@
 
             </div>
             <H4>Outputs all</H4>
-            <div id="getAllOuput">
+            <div id="getAllOutput" class="card-group row row-cols-2">
 
             </div>
             </section>

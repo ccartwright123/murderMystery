@@ -20,16 +20,41 @@ selector.addEventListener(`change`, (e) => {
         });
     }else if(desc === "create"){
         show.style.display= "none";
-        document.querySelector("section#postSection > form").addEventListener('submit', (e) =>{
-            console.log("create")
+        document.querySelector("section#postSection > form").addEventListener('submit', (e) => {
+            e.preventDefault(); // stops the form submitting in the default way
+        
+            const form = e.target;
+            
+            const data = {
+                name: form.inputName.value,
+                wepon: form.weponSelect.value,
+                location: form.locationSelect.value,
+                job: form.inputJob.value,
+                
+            }
+        
+            console.log("DATA: ", data);
+        
+            axios.post(`${baseURL}/createSuspect`, data)
+            .then((res) => {
+                console.log(res);
+                
+        
+                form.reset(); //resets form
+                form.inputName.focus(); // selects the name input
+            }).catch(err => console.log(err));
         });
+
     }else{
         console.log("default");
     }
 });
-const suspectKitten = (suspect, outputDiv) => {   
+const getAllOutput = document.querySelector("#getAllOutput");
+
+const renderSuspect = (suspect, outputDiv) => {   
     const suspectColumn = document.createElement('div');
     suspectColumn.classList.add("col");
+    
 
     const suspectCard = document.createElement('div');
     suspectCard.classList.add("card");
@@ -45,36 +70,37 @@ const suspectKitten = (suspect, outputDiv) => {
 
 
     const suspectWepon = document.createElement("p");
-    suspectWepon.innerText = `Age: ${suspect.wepon}`;
+    suspectWepon.innerText = `Wepon: ${suspect.wepon}`;
     suspectWepon.classList.add("card-text");
-    newKitten.appendChild(suspectWepon);
+    newSuspect.appendChild(suspectWepon);
 
     const suspectLocation = document.createElement("p");
-    suspectLocation.innerText = `Breed: ${suspect.location}`; 
+    suspectLocation.innerText = `Current Location: ${suspect.location}`; 
     suspectLocation.classList.add("card-text");
-    newKitten.appendChild(suspectLocation);
+    newSuspect.appendChild(suspectLocation);
 
     const suspectJob = document.createElement("p");
-    suspectJob.innerText = `Cuteness: ${suspect.job}`; 
+    suspectJob.innerText = `Profession: ${suspect.job}`; 
     suspectJob.classList.add("card-text");
-    newKitten.appendChild(suspectJob);
+    newSuspect.appendChild(suspectJob);
 
     const suspectpercentage = document.createElement("p");
-    suspectpercentage.innerText = `Cuteness: ${suspect.percentageSus}`; 
+    suspectpercentage.innerText = `Suspect Percentage: ${suspect.percentageSus}`; 
     suspectpercentage.classList.add("card-text");
-    newKitten.appendChild(suspectpercentage);
+    newSuspect.appendChild(suspectpercentage);
 
     const deleteButton = document.createElement('button');
     deleteButton.innerText = "DELETE";
     deleteButton.classList.add("btn", "btn-primary");
     deleteButton.addEventListener('click', () => deleteKitten(suspect.id));
 
-    newKitten.appendChild(deleteButton);
+    newSuspect.appendChild(deleteButton);
 
-    kittenCard.appendChild(newSuspect);
+    suspectCard.appendChild(newSuspect);
 
     outputDiv.appendChild(suspectColumn);
 }
+
 
 }
 )();
