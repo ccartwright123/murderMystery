@@ -14,6 +14,7 @@
     <div id="centerBox">
         <h1>Murder Mystery </h1>
         <div class="boxbackground" style="float: left; padding-top: 0.5%;">
+            <section id="postSection">
             <form>
                 <fieldset class="scheduler-border border border-4" style="padding: 1% 3%;">
                     <legend>
@@ -21,11 +22,12 @@
                     </legend>
                     <label for="optionSelect">Option: </label>
                     <select name="option" id="optionSelect">
-                        <option>create</option>
-                        <option>update</option>
+                        <option value="defualt">defualt</option>
+                        <option value="create">create</option>
+                        <option value="update">update</option>
                     </select>
                     <br>
-                    <div id="ifUpdate" style="display: show;">
+                    <div id="ifUpdate" style="display: none;">
                         <lable id="idInput">ID: </lable>
                     <input type="text" name="inputID" id="idInput" size="5%">
                     </div>
@@ -57,6 +59,7 @@
                     </div>
                 </fieldset>
             </form>
+        </section>
             <form>
                 <fieldset>
                     <legend>
@@ -79,13 +82,22 @@
             <br>
         </div>
         <div class="boxbackground2" style="float: right;">
-            
+            <h4>ID return</h4>
+            <div id="getByIdOutput">
+
+            </div>
+            <H4>Outputs all</H4>
+            <div id="getAllOuput">
+
+            </div>
+            </section>
 
             <br>
         </div>
 
 
     </div>
+    <script src="javascript/index.js"></script>
 </body>
 
 </html>
