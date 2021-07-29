@@ -72,9 +72,15 @@ This project will involve concepts from all core training modules, specifically
 
 The Kanban board for this project is available [here](https://testjira1322.atlassian.net/jira/software/projects/ELB/boards/5). The software i used was Kanban board, i used a kanban template for my kanban board with additional features like sprint and prioity levels. 
 
-  
 
-  
+
+![kanban](https://user-images.githubusercontent.com/86298594/127574706-c81197b3-7d4a-49bc-8279-5fdf85249101.png)
+
+![kanban sprint](https://user-images.githubusercontent.com/86298594/127574833-2856b651-5c44-47e9-9c6b-1ee48e0d2b72.png)
+
+## GitHub
+
+i used GitHub as version control, this allowed me to create a multiple branches this allowed me to merge topic branches to Dev allowing me to check merge avalibilty to check that there was no conflics that could appear. After merding all topic branches i merged Dev to main without any issues as they would of appeared at previous merges. 
 
 ## Data Stack 
 
@@ -100,9 +106,13 @@ My back-end is powered by Java using the Spring Boot Framework. This allows rapi
 
 The front end is powered by HTML, CSS and Javascript, utilising the CSS Bootstrap framework to fine tune the layout of the web page using columns and rows to provide a modal element to use with the update method in the application. HTML and CSS have been used to produce the look of the website and javascript has been used to send requests to java, to send data from and to the database allowing the user to populate the elements on the webpage. 
 
-  
+![front-end](https://user-images.githubusercontent.com/86298594/127574126-611f897e-384c-4183-a4fb-ca86eb7ed343.png)
 
-  
+![all my suspects](https://user-images.githubusercontent.com/86298594/127574323-c522403f-2984-4e1c-9841-847c06df2195.png)
+
+![update](https://user-images.githubusercontent.com/86298594/127574378-a3e56f00-dab2-428d-b85d-c91c347492ef.png)
+
+![updateCode](https://user-images.githubusercontent.com/86298594/127574639-bf40f6eb-51c2-4b0a-84aa-80c93c171167.png)
 
 ## Testing 
 
