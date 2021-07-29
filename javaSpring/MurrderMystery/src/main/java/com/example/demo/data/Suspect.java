@@ -129,30 +129,30 @@ public class Suspect {
 		String locate = getLocation();
 		switch (weapon) {
 		case "sword":
-			percentageSus=percentageSus +50;
+			percentageSus=percentageSus +10;
 			break;
 		case "rope":
-			percentageSus= percentageSus + 60;
+			percentageSus= percentageSus + 35;
 			break;
 		case "gun":
-			percentageSus= percentageSus + 60;
+			percentageSus= percentageSus + 15;
 			break;
 		case "hammer":
-			percentageSus= percentageSus + 60;
+			percentageSus= percentageSus + 25;
 			break;
 		}
 		switch (locate) {
 		case "garden":
-			percentageSus=percentageSus +50;
+			percentageSus=percentageSus +10;
 			break;
 		case "living room":
-			percentageSus= percentageSus + 60;
+			percentageSus= percentageSus + 25;
 			break;
 		case "bedroom":
-			percentageSus= percentageSus + 60;
+			percentageSus= percentageSus + 35;
 			break;
 		case "car":
-			percentageSus= percentageSus + 60;
+			percentageSus= percentageSus + 20;
 			break;
 		}
 		
