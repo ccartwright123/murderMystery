@@ -90,7 +90,7 @@ selector.addEventListener(`change`, (e) => {
 const getAllOutput = document.querySelector("#getAllOutput");
 const getByIdOutput = document.querySelector("#getByIdOutput");
 const getByNameOutput = document.querySelector("#getByNameOutput");
-const toggalAll = document.querySelector("#toggalAll");
+const showNo = document.querySelector("#toggalAll");
 
 const renderSuspect = (suspect, outputDiv) => {   
     const suspectColumn = document.createElement('div');
@@ -132,7 +132,7 @@ const renderSuspect = (suspect, outputDiv) => {
 
     const deleteButton = document.createElement('button');
     deleteButton.innerText = "DELETE";
-    deleteButton.classList.add("btn", "btn-secondary");
+    deleteButton.classList.add("btn", "btn-secondary","space");
     deleteButton.addEventListener('click', () => deleteSuspect(suspect.id));
 
     const updateButton = document.createElement('button');
@@ -201,10 +201,13 @@ const getByName = () => {
 getAllSuspects();
 
 const changeSub =() => {
-    if (toggalAll.style.display == "none"){
-        toggalAll.style.display = "block";
+    console.log("helloefgnerjgberbg")
+    if (getAllOutput.style.display === "none"){
+        console.log("Dfwd")
+        document.location.reload();
     }else{
-        toggalAll.style.display= "none";
+        console.log("ahhhhh")
+        getAllOutput.style.display = "none";
     }
 }
 
