@@ -41,7 +41,7 @@ public class SuspectControllerIntergrationTest {
 
 	@Test
 	void testCreate() throws Exception {
-		Suspect testpro = new Suspect("jordan","gun","bedroom","teacher","50%");
+		Suspect testpro = new Suspect("jordan","gun","bedroom","teacher",50);
 		String testproAsJSON = mapper.writeValueAsString(testpro);
 
 		System.out.println(testpro);
@@ -51,7 +51,7 @@ public class SuspectControllerIntergrationTest {
 
 		ResultMatcher checkStatus = status().is(201);
 
-		Suspect testSuspect = new Suspect("jordan","gun","bedroom","teacher","50%");
+		Suspect testSuspect = new Suspect("jordan","gun","bedroom","teacher",50);
 		testSuspect.setId(2); // due to the AUTO_INCREMENT
 		String testSuspectAsJSON = this.mapper.writeValueAsString(testSuspect);
 
@@ -86,7 +86,7 @@ public class SuspectControllerIntergrationTest {
 	@Test
 	void testSuspect() throws Exception { // create request RequestBuilder
 
-		Suspect testSuspect = new Suspect(1,"dan","rope","car","gamer","60%");
+		Suspect testSuspect = new Suspect(1,"dan","rope","car","gamer",60);
 		
 		String testSuspectAsJSON = this.mapper.writeValueAsString(testSuspect);
 
@@ -102,7 +102,7 @@ public class SuspectControllerIntergrationTest {
 		RequestBuilder request = get("/getByName/dan");
 		ResultMatcher checkStatus = status().is(200);
 
-		List<Suspect> testNames = List.of(new Suspect(1,"dan","rope","car","gamer","60%"));
+		List<Suspect> testNames = List.of(new Suspect(1,"dan","rope","car","gamer",60));
 		
 		 // due to the AUTO_INCREMENT
 		
@@ -119,7 +119,7 @@ public class SuspectControllerIntergrationTest {
 	@Test
 	void testUpdate() throws Exception {
 		int id = 1;
-		Suspect project = new Suspect(id,"jordan","gun","bedroom","teacher","50%");
+		Suspect project = new Suspect(id,"jordan","gun","bedroom","teacher",50);
 		String project1 = this.mapper.writeValueAsString(project);
 		RequestBuilder request = put("/updateSuspect/1").contentType(MediaType.APPLICATION_JSON).content(project1);
 		ResultMatcher checkBody = content().json(project1);
