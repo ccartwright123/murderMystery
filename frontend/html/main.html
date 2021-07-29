@@ -31,13 +31,13 @@
                     </select>
                     <br>
                     <div id="ifUpdate" style="display: none;">
-                        <lable id="idInput">ID: </lable>
+                        <lable for="idInput">ID: </lable>
                     <input type="text" name="inputID" id="idInput" size="5%">
                     </div>
-                    <lable id="nameInput">Name: </lable>
+                    <lable fof="nameInput">Name: </lable>
                     <input type="text" name="inputName" id="nameInput">
                     <br>
-                    <label for="weponSelect">Wepon: </label>
+                    <label for="weponSelect">Weapon: </label>
                     <select name="slect" id="weponSelect">
                         <option value="sword">Sword</option>
                         <option value="rope">Rope</option>
@@ -53,7 +53,7 @@
                         <option value="car">Car</option>
                     </select>
                     <br>
-                    <lable id="jobInput">Profession: </lable>
+                    <lable for="jobInput">Profession: </lable>
                     <input type="text" name="inputJob" id="jobInput">
                     <br>
                     <br>
@@ -94,13 +94,15 @@
 
             </div>
             <H4>Outputs all</H4>
-            <div id="getAllOutput" class="card-group row row-cols-2">
+            <div id="getAllOutput" class="card-group row row-cols-2 g-4">
+                <div id="toggalAll" style = "display: none;">
 
+                </div>
             </div>
             </section>
 
             <br>
-        </div>
+        </div
 
 
     </div>

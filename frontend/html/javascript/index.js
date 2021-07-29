@@ -5,8 +5,23 @@ console.log("hello");
 const baseURL ="http://localhost:8080";
 const selector = document.querySelector(`[id="optionSelect"]`);
 
+const updateName = document.querySelector("#nameInput");
+const updateWepon = document.querySelector("#weponSelect");
+const updateLocation = document.querySelector("#locationSelect");
+const updateJob = document.querySelector("#jobInput");
+const updateId = document.querySelector("#idInput");
+
+const data1 = {
+    id: updateId.value,
+    name: updateName.value,
+    wepon: updateWepon.value,
+    location: updateLocation.value,
+    job: updateJob.value
+}
+
 const getId = document.querySelector("#idGet");
 const getName = document.querySelector("#nameget");
+
 
 selector.addEventListener(`change`, (e) => {
     console.log (`e.target`, e.target);
@@ -18,8 +33,25 @@ selector.addEventListener(`change`, (e) => {
     if (desc === "update"){
         console.log("done");
         show.style.display= "block";
-        document.querySelector("section#postSection > form").addEventListener('submit', (e) =>{
+        document.querySelector("section#postSection > form").addEventListener('submit', (e) => {
+        
             console.log("update")
+            e.preventDefault();
+            const data = {
+                id: updateId.value,
+                name: updateName.value,
+                wepon: updateWepon.value,
+                location: updateLocation.value,
+                job: updateJob.value
+        
+            }
+            axios.put(`${baseURL}/updateSuspect/${data1.id}`, data)
+                .then(res => {
+                    console.log(updateName);
+                    const book = res.data;
+                    getAllSuspects();
+                    document.location.reload();
+                }).catch(err => console.log(err));
         });
     }else if(desc === "create"){
         show.style.display= "none";
@@ -52,9 +84,13 @@ selector.addEventListener(`change`, (e) => {
         console.log("default");
     }
 });
+
+
+
 const getAllOutput = document.querySelector("#getAllOutput");
 const getByIdOutput = document.querySelector("#getByIdOutput");
 const getByNameOutput = document.querySelector("#getByNameOutput");
+const toggalAll = document.querySelector("#toggalAll");
 
 const renderSuspect = (suspect, outputDiv) => {   
     const suspectColumn = document.createElement('div');
@@ -96,10 +132,24 @@ const renderSuspect = (suspect, outputDiv) => {
 
     const deleteButton = document.createElement('button');
     deleteButton.innerText = "DELETE";
-    deleteButton.classList.add("btn", "btn-primary");
+    deleteButton.classList.add("btn", "btn-secondary");
     deleteButton.addEventListener('click', () => deleteSuspect(suspect.id));
 
+    const updateButton = document.createElement('button');
+    updateButton.innerText = "UPDATE";
+    updateButton.classList.add("btn", "btn-secondary");
+    updateButton.addEventListener('click', () => {
+        data1.id = suspect.id,
+        updateName.value = suspect.name,
+        updateWepon.value = suspect.wepon,
+        updateLocation.value = suspect.location,
+        updateJob.value = suspect.job,
+        updateId.value= data1.id
+    });
+
     newSuspect.appendChild(deleteButton);
+
+    newSuspect.appendChild(updateButton);
 
     suspectCard.appendChild(newSuspect);
 
@@ -148,10 +198,20 @@ const getByName = () => {
         suspects.forEach(suspect => renderSuspect(suspect, getByNameOutput));
     }).catch(err => console.log(err));
 }
+getAllSuspects();
+
+const changeSub =() => {
+    if (toggalAll.style.display == "none"){
+        toggalAll.style.display = "block";
+    }else{
+        toggalAll.style.display= "none";
+    }
+}
 
 document.querySelector("button#getidsub").addEventListener('click', getSuspectById);
 document.querySelector("button#getnamesub").addEventListener('click', getByName);
-document.querySelector("button#getsub").addEventListener('click', getAllSuspects);
+document.querySelector("button#getsub").addEventListener('click', changeSub);
+
 
 
 }
