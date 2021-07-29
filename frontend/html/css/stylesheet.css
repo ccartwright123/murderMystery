@@ -1,0 +1,81 @@
+
+
+body{
+    background-color: rgb(49, 3, 1);
+
+}
+h1{
+    text-align: center;
+    color:rgb(255, 255, 255);
+}
+h5{
+    text-align: center;
+    color:rgb(255, 255, 255);
+}
+
+#boxborder{
+    margin: auto;
+    color: black;
+    background-color: rgb(99, 99, 99);
+    width: 50%;
+    height: 50%;
+    text-align: center;
+    border: black solid 5px;
+    font-size:larger;
+    padding: 2%;
+}
+.boxbackground{
+    margin: auto;
+    color: black;
+    background-color: rgb(99, 99, 99);
+    width: 45%;
+    height: 50%;
+    display: inline-block;
+    text-align: left;
+    border: black solid 5px;
+    padding-left: 3%;
+    padding-right: 3%;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: larger;
+}
+.boxbackground2{
+    margin: auto;
+    color: black;
+    background-color: rgb(99, 99, 99);
+    width: 50%;
+    height: 50%;
+    display: inline-block;
+    text-align: left;
+    border: black solid 5px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+#centerBox{
+    margin: auto;
+    width: 90%;
+    /* background-color: rgb(99, 99, 99); 
+    border: black solid 5px;*/
+    padding: 1%;
+}
+#formsub{
+    width: 85%;
+    background-color: darkgrey;
+    padding: 2% 3%;
+    border: black solid 3px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+#idsub{
+    padding: 0 5%;
+
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+#getsub{
+    width: 85%;
+    background-color: darkgrey;
+    border: black solid 3px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.space{
+    margin: 5%;
+}
