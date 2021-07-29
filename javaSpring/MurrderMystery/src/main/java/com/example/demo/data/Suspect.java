@@ -17,25 +17,32 @@ public class Suspect {
 	private String wepon;
 	private String location;
 	private String job;
-	private String percentageSus;
+	private int percentageSus;
 	
 	
 	
-	public Suspect(int id, String name,String wepon,String location, String job, String percentageSus) {
+	public Suspect(int id, String name,String wepon,String location, String job, int percentageSus) {
 		super();
 		this.id =id;
 		this.name=name;
 		this.wepon=wepon;
 		this.location=location;
 		this.job=job;
-		this.percentageSus=percentageSus;
+		setPercentageSus();
 	}
-	public Suspect(String name,String wepon,String location, String job, String percentageSus) {
+	public Suspect(String name,String wepon,String location, String job, int percentageSus) {
 		super();
 		this.name=name;
 		this.location=location;
 		this.job=job;
-		this.percentageSus=percentageSus;
+		setPercentageSus();
+	}
+	public Suspect(String name,String wepon,String location, String job) {
+		super();
+		this.name=name;
+		this.location=location;
+		this.job=job;
+		setPercentageSus();
 	}
 	public Suspect() {
 		
@@ -111,13 +118,44 @@ public class Suspect {
 	}
 
 
-	public String getPercentageSus() {
+	public int getPercentageSus() {
 		return percentageSus;
 	}
 
 
-	public void setPercentageSus(String percentageSus) {
-		this.percentageSus = percentageSus;
+	public void setPercentageSus() {
+		percentageSus=0;
+		String weapon = getWepon();
+		String locate = getLocation();
+		switch (weapon) {
+		case "sword":
+			percentageSus=percentageSus +10;
+			break;
+		case "rope":
+			percentageSus= percentageSus + 35;
+			break;
+		case "gun":
+			percentageSus= percentageSus + 15;
+			break;
+		case "hammer":
+			percentageSus= percentageSus + 25;
+			break;
+		}
+		switch (locate) {
+		case "garden":
+			percentageSus=percentageSus +10;
+			break;
+		case "living room":
+			percentageSus= percentageSus + 25;
+			break;
+		case "bedroom":
+			percentageSus= percentageSus + 35;
+			break;
+		case "car":
+			percentageSus= percentageSus + 20;
+			break;
+		}
+		
 	}
 	
 	@Override

@@ -28,9 +28,9 @@ public class SuspectServiceDBUnitTest {
 	@Test
 	void testCreate() {
 
-		Suspect newSuspect = new Suspect("jordan","gun","bedroom","teacher","50%");
+		Suspect newSuspect = new Suspect("jordan","gun","bedroom","teacher",50);
 
-		Suspect savedSuspect = new Suspect("jordan","gun","bedroom","teacher","50%");
+		Suspect savedSuspect = new Suspect("jordan","gun","bedroom","teacher",50);
 
 		Mockito.when(this.repo.save(newSuspect)).thenReturn(savedSuspect);
 
@@ -41,7 +41,7 @@ public class SuspectServiceDBUnitTest {
 
 	@Test
 	void testGetAll() {
-		List<Suspect> testSuspects = List.of(new Suspect("jordan","gun","bedroom","teacher","50%"));
+		List<Suspect> testSuspects = List.of(new Suspect("jordan","gun","bedroom","teacher",50));
 
 		Mockito.when(this.repo.findAll()).thenReturn(testSuspects);
 
@@ -53,7 +53,7 @@ public class SuspectServiceDBUnitTest {
 	@Test
 	void testFindByID() {
 		int id = 1;
-		Suspect testSuspect = new Suspect("jordan","gun","bedroom","teacher","50%");
+		Suspect testSuspect = new Suspect("jordan","gun","bedroom","teacher",50);
 
 		Mockito.when(repo.findById(id)).thenReturn(Optional.of(testSuspect));
 
@@ -66,7 +66,7 @@ public class SuspectServiceDBUnitTest {
 	@Test
 	void testGetByName() {
 
-		List<Suspect> testSuspects = List.of(new Suspect("jordan","gun","bedroom","teacher","50%"));
+		List<Suspect> testSuspects = List.of(new Suspect("jordan","gun","bedroom","teacher",50));
 
 		String search = "jordan";
 		Mockito.when(this.repo.findByNameIgnoreCase(search)).thenReturn(testSuspects);
@@ -81,19 +81,19 @@ public class SuspectServiceDBUnitTest {
 		// GIVEN
 		int id = 1;
 
-		Suspect testSuspect= new Suspect(id,"jordan","gun","bedroom","teacher","50%"); // returned by FindById
-		Suspect testNewSuspect = new Suspect(id,"daisy","rope","garden","shop keeper","90%"); // new cat data
+		Suspect testSuspect= new Suspect(id,"jordan","gun","bedroom","teacher",50); // returned by FindById
+		Suspect testNewSuspect = new Suspect(id,"daisy","rope","garden","shop keeper",90); // new cat data
 
 		// WHEN
 		Mockito.when(this.repo.findById(id)).thenReturn(Optional.of(testSuspect)); // dw about this for now tbh
-		Mockito.when(this.repo.save(new Suspect(id,"daisy","rope","garden","shop keeper","90%"))).thenReturn(testNewSuspect);
+		Mockito.when(this.repo.save(new Suspect(id,"daisy","rope","garden","shop keeper",90))).thenReturn(testNewSuspect);
 
 		Suspect actual = this.service.replaceSuspect(id, testNewSuspect);
 		// THEN
 		assertThat(actual).isEqualTo(testNewSuspect);
 
 		Mockito.verify(this.repo, Mockito.times(1)).findById(id);
-		Mockito.verify(this.repo, Mockito.times(1)).save(new Suspect(id,"daisy","rope","garden","shop keeper","90%"));
+		Mockito.verify(this.repo, Mockito.times(1)).save(new Suspect(id,"daisy","rope","garden","shop keeper",90));
 	}
 
 	@Test

@@ -47,7 +47,7 @@ public class SuspectServiceDB implements SuspectService{
 		found.setWepon(newSuspect.getWepon());
 		found.setLocation(newSuspect.getLocation());
 		found.setJob(newSuspect.getJob());
-		found.setPercentageSus(newSuspect.getPercentageSus());
+		found.setPercentageSus();
 		
 		Suspect updated = repo.save(found);
 		return updated;

@@ -7,5 +7,5 @@ create table suspect
 	wepon varchar(255),
 	location varchar(255),
 	job varchar(255),
-	percentage_sus varchar(255)
+	percentage_sus integer
 );
