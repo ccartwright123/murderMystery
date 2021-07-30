@@ -82,6 +82,9 @@ The Kanban board for this project is available [here](https://testjira1322.atlas
 
 i used GitHub as version control, this allowed me to create a multiple branches this allowed me to merge topic branches to Dev allowing me to check merge avalibilty to check that there was no conflics that could appear. After merding all topic branches i merged Dev to main without any issues as they would of appeared at previous merges. 
 
+![gitHub branches](https://user-images.githubusercontent.com/86298594/127621208-5db68f16-37ad-48d6-b43c-db2319a5b8ab.png)
+
+
 ## Data Stack 
 
   
