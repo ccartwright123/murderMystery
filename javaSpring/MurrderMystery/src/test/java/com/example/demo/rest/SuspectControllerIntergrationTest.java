@@ -86,7 +86,7 @@ public class SuspectControllerIntergrationTest {
 	@Test
 	void testSuspect() throws Exception { // create request RequestBuilder
 
-		Suspect testSuspect = new Suspect(1,"dan","rope","car","gamer",60);
+		Suspect testSuspect = new Suspect(1,"dan","rope","car","gamer",55);
 		
 		String testSuspectAsJSON = this.mapper.writeValueAsString(testSuspect);
 
@@ -102,7 +102,7 @@ public class SuspectControllerIntergrationTest {
 		RequestBuilder request = get("/getByName/dan");
 		ResultMatcher checkStatus = status().is(200);
 
-		List<Suspect> testNames = List.of(new Suspect(1,"dan","rope","car","gamer",60));
+		List<Suspect> testNames = List.of(new Suspect(1,"dan","rope","car","gamer",55));
 		
 		 // due to the AUTO_INCREMENT
 		

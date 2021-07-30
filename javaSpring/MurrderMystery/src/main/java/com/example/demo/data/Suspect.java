@@ -34,6 +34,7 @@ public class Suspect {
 		super();
 		this.name=name;
 		this.location=location;
+		this.wepon=wepon;
 		this.job=job;
 		setPercentageSus();
 	}
@@ -42,6 +43,7 @@ public class Suspect {
 		this.name=name;
 		this.location=location;
 		this.job=job;
+		this.wepon=wepon;
 		setPercentageSus();
 	}
 	public Suspect() {

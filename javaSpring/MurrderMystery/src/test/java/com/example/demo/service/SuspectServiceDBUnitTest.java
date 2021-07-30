@@ -53,7 +53,7 @@ public class SuspectServiceDBUnitTest {
 	@Test
 	void testFindByID() {
 		int id = 1;
-		Suspect testSuspect = new Suspect("jordan","gun","bedroom","teacher",50);
+		Suspect testSuspect = new Suspect("dan","rope","car","gamer",60);
 
 		Mockito.when(repo.findById(id)).thenReturn(Optional.of(testSuspect));
 
